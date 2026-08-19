@@ -1,27 +1,27 @@
 "use client";
 
-type Tone = "ocean" | "charcoal" | "sand" | "dusk" | "ivory";
-type Motif = "horizon" | "wave" | "arch" | "grid" | "path" | "none";
+type Tone = "steel" | "medical" | "pastel" | "mist" | "offwhite";
+type Motif = "horizon" | "wave" | "pulse" | "grid" | "path" | "none";
 
 const tones: Record<Tone, string> = {
-  ocean: "linear-gradient(155deg, #17302E 0%, #2C6863 46%, #6FAFAA 100%)",
-  charcoal: "linear-gradient(155deg, #0E0F12 0%, #1F2124 55%, #2B2D31 100%)",
-  sand: "linear-gradient(155deg, #A9976F 0%, #C7B79C 50%, #DCD0BA 100%)",
-  dusk: "linear-gradient(155deg, #2B2D31 0%, #4A5A56 55%, #6FAFAA 100%)",
-  ivory: "linear-gradient(155deg, #EEE7D9 0%, #F6F2EA 55%, #FBF9F5 100%)",
+  steel: "linear-gradient(155deg, #1F4E66 0%, #2F6F91 46%, #4F89A8 100%)",
+  medical: "linear-gradient(155deg, #2F6F91 0%, #4F89A8 50%, #6D9FBA 100%)",
+  pastel: "linear-gradient(155deg, #9CBBCC 0%, #B9D1DF 55%, #E8F0F4 100%)",
+  mist: "linear-gradient(155deg, #D9E6EC 0%, #E8F0F4 55%, #F7F6F4 100%)",
+  offwhite: "linear-gradient(155deg, #EFEDE9 0%, #F7F6F4 55%, #FBFAF9 100%)",
 };
 
 const textOn: Record<Tone, string> = {
-  ocean: "text-ivory/70",
-  charcoal: "text-ivory/60",
-  sand: "text-charcoal/60",
-  dusk: "text-ivory/70",
-  ivory: "text-charcoal/50",
+  steel: "text-offwhite/70",
+  medical: "text-offwhite/70",
+  pastel: "text-ink/60",
+  mist: "text-ink/50",
+  offwhite: "text-ink/45",
 };
 
 function Motif({ motif, tone }: { motif: Motif; tone: Tone }) {
-  const stroke = tone === "sand" || tone === "ivory" ? "#15161A" : "#F6F2EA";
-  const opacity = 0.16;
+  const stroke = tone === "pastel" || tone === "mist" || tone === "offwhite" ? "#2F6F91" : "#E8F0F4";
+  const opacity = 0.18;
   if (motif === "none") return null;
   if (motif === "horizon") {
     return (
@@ -37,10 +37,17 @@ function Motif({ motif, tone }: { motif: Motif; tone: Tone }) {
       </svg>
     );
   }
-  if (motif === "arch") {
+  if (motif === "pulse") {
     return (
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path d="M35,85 L35,45 A15,15 0 0 1 65,45 L65,85" fill="none" stroke={stroke} strokeOpacity={opacity} strokeWidth="0.6" />
+        <path
+          d="M0,55 L20,55 L28,35 L36,72 L44,45 L50,55 L100,55"
+          fill="none"
+          stroke={stroke}
+          strokeOpacity={opacity}
+          strokeWidth="0.7"
+          vectorEffect="non-scaling-stroke"
+        />
       </svg>
     );
   }
@@ -65,7 +72,7 @@ function Motif({ motif, tone }: { motif: Motif; tone: Tone }) {
 }
 
 export default function ImagePlaceholder({
-  tone = "ocean",
+  tone = "steel",
   motif = "horizon",
   label,
   index,

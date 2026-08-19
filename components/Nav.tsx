@@ -4,12 +4,11 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "Ventures", href: "#ecosystem" },
-  { label: "Projects", href: "#ventures" },
-  { label: "Invest", href: "#ways-in" },
-  { label: "Build", href: "#ways-in" },
-  { label: "Partners", href: "#ways-in" },
-  { label: "Story", href: "#story" },
+  { label: "Home", href: "#top" },
+  { label: "Sprechzeiten", href: "#kontakt" },
+  { label: "Leistungen", href: "#leistungen" },
+  { label: "Team", href: "#team" },
+  { label: "Kontakt", href: "#kontakt" },
 ];
 
 export default function Nav() {
@@ -30,25 +29,23 @@ export default function Nav() {
     };
   }, [open]);
 
-  const light = open || !scrolled;
-
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-premium ${
           scrolled && !open
-            ? "bg-ivory/90 backdrop-blur-md border-b border-charcoal/10"
-            : "bg-transparent"
+            ? "bg-steel-deep/95 backdrop-blur-md border-b border-offwhite/10"
+            : "bg-steel-deep"
         }`}
       >
         <div className="max-w-editorial mx-auto flex items-center justify-between px-6 sm:px-10 h-20">
           <a
             href="#top"
-            className={`font-serif text-xl tracking-tight transition-colors duration-500 ${
-              light ? "text-ivory" : "text-charcoal"
-            }`}
+            className="font-display font-semibold text-offwhite leading-[1.05] tracking-tight text-sm sm:text-base"
           >
-            booble<span className="text-andaman-soft">.</span>Life
+            SPORTPRAXIS
+            <br />
+            STUTTGART
           </a>
 
           <nav className="hidden lg:flex items-center gap-9">
@@ -57,11 +54,7 @@ export default function Nav() {
                 key={l.label}
                 href={l.href}
                 data-cursor-expand
-                className={`eyebrow transition-colors duration-300 ${
-                  light
-                    ? "text-ivory/75 hover:text-ivory"
-                    : "text-charcoal/70 hover:text-charcoal"
-                }`}
+                className="eyebrow text-offwhite/70 hover:text-offwhite transition-colors duration-300"
               >
                 {l.label}
               </a>
@@ -70,15 +63,11 @@ export default function Nav() {
 
           <div className="hidden lg:block">
             <a
-              href="#final-cta"
+              href="#kontakt"
               data-cursor-expand
-              className={`eyebrow inline-flex items-center gap-2 border px-5 py-3 transition-all duration-400 ease-premium ${
-                light
-                  ? "border-ivory/50 text-ivory hover:bg-ivory hover:text-charcoal hover:border-ivory"
-                  : "border-charcoal/30 text-charcoal hover:bg-charcoal hover:text-ivory hover:border-charcoal"
-              }`}
+              className="eyebrow inline-flex items-center gap-2 bg-pastel text-steel-deep px-5 py-3 hover:bg-offwhite transition-all duration-400 ease-premium"
             >
-              Start a conversation
+              Termin buchen →
             </a>
           </div>
 
@@ -88,14 +77,14 @@ export default function Nav() {
             className="lg:hidden relative z-10 h-10 w-10 flex flex-col items-center justify-center gap-[6px]"
           >
             <span
-              className={`block h-px w-6 transition-transform duration-300 ${
-                light ? "bg-ivory" : "bg-charcoal"
-              } ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+              className={`block h-px w-6 bg-offwhite transition-transform duration-300 ${
+                open ? "translate-y-[3.5px] rotate-45" : ""
+              }`}
             />
             <span
-              className={`block h-px w-6 transition-transform duration-300 ${
-                light ? "bg-ivory" : "bg-charcoal"
-              } ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+              className={`block h-px w-6 bg-offwhite transition-transform duration-300 ${
+                open ? "-translate-y-[3.5px] -rotate-45" : ""
+              }`}
             />
           </button>
         </div>
@@ -108,7 +97,7 @@ export default function Nav() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-charcoal text-ivory flex flex-col justify-between px-6 sm:px-10 pt-28 pb-10 lg:hidden"
+            className="fixed inset-0 z-40 bg-steel-deep text-offwhite flex flex-col justify-between px-6 sm:px-10 pt-28 pb-10 lg:hidden"
           >
             <nav className="flex flex-col gap-2">
               {links.map((l, i) => (
@@ -119,7 +108,7 @@ export default function Nav() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 + i * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-serif text-4xl sm:text-5xl py-3 border-b border-ivory/10"
+                  className="font-display font-medium text-4xl sm:text-5xl py-3 border-b border-offwhite/10"
                 >
                   {l.label}
                 </motion.a>
@@ -132,13 +121,13 @@ export default function Nav() {
               className="flex flex-col gap-6"
             >
               <a
-                href="#final-cta"
+                href="#kontakt"
                 onClick={() => setOpen(false)}
-                className="eyebrow inline-flex w-fit items-center gap-2 border border-ivory/40 px-6 py-4"
+                className="eyebrow inline-flex w-fit items-center gap-2 bg-pastel text-steel-deep px-6 py-4"
               >
-                Start a conversation
+                Termin buchen →
               </a>
-              <p className="eyebrow text-ivory/40">Thailand · Building globally</p>
+              <p className="eyebrow text-offwhite/40">Stuttgart · Orthopädie · Sportmedizin</p>
             </motion.div>
           </motion.div>
         )}

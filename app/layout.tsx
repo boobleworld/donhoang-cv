@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import ScrollProgress from "@/components/ScrollProgress";
 import CursorDot from "@/components/CursorDot";
 
-const fraunces = Fraunces({
+const manrope = Manrope({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-serif",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -20,14 +19,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "booble.Life — Build places. Create freedom.",
+  title: "Sportpraxis Stuttgart — Bewegung ist Medizin.",
   description:
-    "booble.Life is the master brand behind a growing ecosystem of real-world ventures, places, experiences, technology and communities. Thailand first. Built to expand.",
-  metadataBase: new URL("https://booble.life"),
+    "Sportpraxis Stuttgart verbindet moderne Orthopädie, Unfallchirurgie, Sportmedizin und ästhetische Medizin. Vereinbaren Sie jetzt Ihren Termin.",
+  metadataBase: new URL("https://sportpraxis-stuttgart.de"),
   openGraph: {
-    title: "booble.Life — Build places. Create freedom.",
+    title: "Sportpraxis Stuttgart — Bewegung ist Medizin.",
     description:
-      "A new way to build, live and experience the world. Thailand first. Built to expand.",
+      "Moderne Orthopädie, Unfallchirurgie, Sportmedizin und ästhetische Medizin in Stuttgart.",
     type: "website",
   },
 };
@@ -38,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="de" className={`${manrope.variable} ${inter.variable}`}>
       <body>
         <ScrollProgress />
         <CursorDot />

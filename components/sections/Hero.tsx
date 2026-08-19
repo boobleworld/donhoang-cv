@@ -16,17 +16,17 @@ export default function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section id="top" ref={ref} className="relative h-[100svh] w-full overflow-hidden bg-charcoal">
+    <section id="top" ref={ref} className="relative h-[100svh] w-full overflow-hidden bg-steel-deep">
       <motion.div style={{ y: imgY }} className="absolute inset-0 h-[122%] w-full">
         <ImagePlaceholder
-          tone="ocean"
-          motif="wave"
+          tone="steel"
+          motif="pulse"
           className="h-full w-full"
-          label="Andaman Sea, Thailand — coastline at first light"
+          label="Sportpraxis Stuttgart — Behandlungsraum in Bewegung"
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-charcoal/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-steel-deep/85 via-steel-deep/25 to-steel-deep/55" />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
@@ -37,64 +37,42 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="eyebrow text-ivory/80 mb-6"
+            className="eyebrow text-offwhite/80 mb-6"
           >
-            Thailand · Real-World Ventures · Life
+            Orthopädie · Unfallchirurgie · Sportmedizin · Ästhetische Medizin
           </motion.p>
 
-          <h1 className="font-serif text-ivory leading-[0.98] tracking-tight text-balance">
+          <h1 className="font-display font-semibold text-offwhite leading-[0.98] tracking-tight text-balance">
             <motion.span
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
               className="block text-[15vw] sm:text-[9vw] lg:text-[7vw]"
             >
-              Build places.
+              Bewegung
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.32, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-              className="block text-[15vw] sm:text-[9vw] lg:text-[7vw] italic text-andaman-soft"
+              className="block text-[15vw] sm:text-[9vw] lg:text-[7vw] text-pastel"
             >
-              Create freedom.
+              ist Medizin.
             </motion.span>
           </h1>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-xl"
-          >
-            <p className="text-ivory/85 text-base sm:text-lg leading-relaxed">
-              booble.Life builds businesses, places and experiences for a more
-              intentional way of living.
-            </p>
-            <p className="text-ivory/60 text-sm sm:text-base mt-2 tracking-wide">
-              Thailand first. Built to expand.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex flex-col sm:flex-row gap-4"
+            className="mt-10"
           >
             <a
-              href="#ecosystem"
+              href="#kontakt"
               data-cursor-expand
-              className="eyebrow inline-flex items-center justify-center gap-2 bg-ivory text-charcoal px-7 py-4 hover:bg-andaman hover:text-ivory transition-colors duration-400 ease-premium"
+              className="eyebrow inline-flex items-center justify-center gap-2 bg-pastel text-steel-deep px-7 py-4 hover:bg-offwhite transition-colors duration-400 ease-premium"
             >
-              Explore the world of booble
-            </a>
-            <a
-              href="#final-cta"
-              data-cursor-expand
-              className="eyebrow inline-flex items-center justify-center gap-2 border border-ivory/50 text-ivory px-7 py-4 hover:border-ivory hover:bg-ivory/10 transition-colors duration-400 ease-premium"
-            >
-              Start a conversation
+              Online Termin buchen →
             </a>
           </motion.div>
         </div>
@@ -104,7 +82,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1 }}
-        className="absolute bottom-8 right-6 sm:right-10 z-10 flex items-center gap-3 text-ivory/70"
+        className="absolute bottom-8 right-6 sm:right-10 z-10 flex items-center gap-3 text-offwhite/70"
       >
         <span className="eyebrow hidden sm:block">Scroll to explore</span>
         <motion.span

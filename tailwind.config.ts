@@ -9,29 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: {
-          DEFAULT: "#F6F2EA",
-          soft: "#FBF9F5",
-          deep: "#EEE7D9",
+        steel: {
+          DEFAULT: "#2F6F91",
+          soft: "#3C7FA3",
+          deep: "#234F68",
         },
-        charcoal: {
-          DEFAULT: "#15161A",
-          soft: "#1F2124",
-          muted: "#2B2D31",
+        medical: {
+          DEFAULT: "#4F89A8",
+          soft: "#6D9FBA",
+          deep: "#3D6E8A",
         },
-        andaman: {
-          DEFAULT: "#3E8F8A",
-          soft: "#6FAFAA",
-          deep: "#2C6863",
+        pastel: {
+          DEFAULT: "#B9D1DF",
+          soft: "#CBDEE9",
+          deep: "#9CBBCC",
         },
-        sand: {
-          DEFAULT: "#C7B79C",
-          soft: "#DCD0BA",
-          deep: "#A9976F",
+        mist: {
+          DEFAULT: "#E8F0F4",
+          soft: "#F1F6F8",
+          deep: "#D9E6EC",
+        },
+        offwhite: {
+          DEFAULT: "#F7F6F4",
+          soft: "#FBFAF9",
+          deep: "#EFEDE9",
+        },
+        ink: {
+          DEFAULT: "#3E4549",
+          soft: "#5A6266",
+          deep: "#282D30",
         },
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-display)", "Helvetica", "Arial", "sans-serif"],
         sans: ["var(--font-sans)", "Helvetica", "Arial", "sans-serif"],
       },
       letterSpacing: {

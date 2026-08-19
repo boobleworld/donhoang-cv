@@ -14,8 +14,8 @@ export default function CursorDot() {
     const setExpanded = (expanded: boolean) => {
       dot.style.width = expanded ? "44px" : "10px";
       dot.style.height = expanded ? "44px" : "10px";
-      dot.style.background = expanded ? "transparent" : "#3E8F8A";
-      dot.style.border = expanded ? "1px solid #F6F2EA" : "none";
+      dot.style.background = expanded ? "transparent" : "#4F89A8";
+      dot.style.border = expanded ? "1px solid #2F6F91" : "none";
     };
 
     const move = (e: MouseEvent) => {
