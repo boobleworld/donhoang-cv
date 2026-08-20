@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal, RevealText } from "@/components/Reveal";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 const team = [
-  { name: "Ingrid Wais", role: "Praxisteam", tone: "pastel" as const, span: "sm:col-span-4 sm:row-span-2 h-[46vh] sm:h-full" },
-  { name: "Sabine Krug", role: "Empfang", tone: "medical" as const, span: "sm:col-span-3 h-[32vh]" },
+  { name: "Frau Pucelj", role: "Praxisteam", tone: "pastel" as const, photo: "/images/team/pucelj.jpg", span: "sm:col-span-4 sm:row-span-2 h-[46vh] sm:h-full" },
+  { name: "Frau Horváth", role: "Praxisteam", tone: "medical" as const, photo: "/images/team/horvath.jpg", span: "sm:col-span-3 h-[32vh]" },
   { name: "Petra Lang", role: "MFA", tone: "mist" as const, span: "sm:col-span-2 h-[32vh]" },
   { name: "Julia Ströbele", role: "Praxisteam", tone: "steel" as const, span: "sm:col-span-3 h-[38vh]" },
   { name: "Melanie Hauff", role: "MFA", tone: "pastel" as const, span: "sm:col-span-2 h-[38vh]" },
@@ -31,7 +32,17 @@ export default function Team() {
                 className="relative h-full w-full overflow-hidden group"
                 data-cursor-expand
               >
-                <ImagePlaceholder tone={member.tone} motif="none" className="h-full w-full" zoom />
+                {member.photo ? (
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    sizes="(min-width: 640px) 45vw, 90vw"
+                    className="object-cover object-top transition-transform duration-[1400ms] ease-premium group-hover:scale-[1.06]"
+                  />
+                ) : (
+                  <ImagePlaceholder tone={member.tone} motif="none" className="h-full w-full" zoom />
+                )}
                 <div className="absolute inset-0 bg-steel-deep/0 group-hover:bg-steel-deep/55 transition-colors duration-500 ease-premium flex items-end p-6">
                   <div className="opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-500 ease-premium">
                     <p className="font-display font-semibold text-offwhite text-xl sm:text-2xl">
